@@ -155,4 +155,25 @@ public class MathUtilTest {
         final int obtido = MathUtil.mdc(a, b);
         assertEquals(esperado, obtido);
     }
+    
+    //IMPLEMENTAÇÃO 3 - CASO GERAL
+    @Test
+    void testeMdcMultiplosValores(){
+        final int a = 30;
+        final int b = 12;
+        final int c = 4;
+        final int esperado = 2;
+        final int obtido = MathUtil.mdc(a,b,c);
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testeMdcNenhumParametro() {
+        assertThrows(IllegalArgumentException.class, () -> MathUtil.mdc());
+    }
+    
+    @Test
+    void testeMdcNulo(){
+        assertThrows(NullPointerException.class, () -> MathUtil.mdc(null));
+    }
 }

@@ -1,5 +1,7 @@
 package com.mycompany.implementacaojunitmdc;
 
+import java.util.Objects;
+
 /**
  *
  * @author camila
@@ -27,10 +29,26 @@ public class MathUtil {
         }
         
         //PROPRIEDADE 5
-        if(a % b != 0){
+        /*if(a % b != 0){
             return 1;
+        }*/
+        
+        
+        
+        return mdc(a - b, b);
+    }
+    
+    public static int mdc(int ...valores) {
+        Objects.requireNonNull(valores, "O parâmentro valores não pode ser nulo!");
+        
+        if(valores.length == 0){
+            throw new IllegalArgumentException("E preciso indicar os valores!");
         }
         
-        return -1;
+        int a = valores[0];
+        for(int b : valores){
+            a = mdc(a, b);
+        }
+        return a;
     }
 }
