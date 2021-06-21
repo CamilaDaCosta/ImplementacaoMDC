@@ -158,11 +158,21 @@ public class MathUtilTest {
     
     //IMPLEMENTAÇÃO 3 - CASO GERAL
     @Test
-    void testeMdcMultiplosValores(){
+    void testeMd3Valores(){
         final int a = 30;
         final int b = 12;
         final int c = 4;
         final int esperado = 2;
+        final int obtido = MathUtil.mdc(a,b,c);
+        assertEquals(esperado, obtido);
+    }
+    @Test
+    void testeMdc4Valores(){
+        final int a = 40;
+        final int b = 35;
+        final int c = 24;
+        final int d = 12;
+        final int esperado = 1;
         final int obtido = MathUtil.mdc(a,b,c);
         assertEquals(esperado, obtido);
     }
